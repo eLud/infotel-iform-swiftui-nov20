@@ -11,6 +11,9 @@ struct MoviesDetailsView: View {
 
     var viewModel: MovieDetailsViewModel
 
+    @State var message: String? = nil
+    @State var loading = false
+
     var body: some View {
         VStack {
             Text(viewModel.movie.title)
@@ -20,6 +23,22 @@ struct MoviesDetailsView: View {
 
             }
             viewModel.styleImage
+            HStack {
+                Button("Download") {
+                    loading = true
+                    Downloader.shared.download { (result) in
+                        //Execute after the download
+                        message = result
+                        loading = false
+                    }
+                }
+                if loading {
+                    ProgressView()
+                }
+            }
+            if let message = message {
+                Text(message)
+            }
         }
     }
 }
