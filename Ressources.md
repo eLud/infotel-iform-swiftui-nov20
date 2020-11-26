@@ -10,3 +10,5 @@ https://developer.apple.com/documentation/backgroundtasks
 [Background execution demystified](https://developer.apple.com/videos/play/wwdc2020/10063/)
 
 [Apple Platform Security](https://support.apple.com/fr-fr/guide/security/welcome/web)
+
+[Hacking with Swift](https://www.hackingwithswift.com)
